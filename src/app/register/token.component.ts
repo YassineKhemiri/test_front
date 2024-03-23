@@ -22,9 +22,7 @@ export class TokenComponent implements OnInit {
 	tokenStatus = TokenStatus;
 	status !: TokenStatus ;
 	errorMessage = '';
-
 	constructor(private authService: AuthService, private route: ActivatedRoute) {
-
 	}
 
 	ngOnInit(): void {
@@ -33,6 +31,7 @@ export class TokenComponent implements OnInit {
 			this.authService.verifyToken(this.token).subscribe(
 			data => {
 				this.status = TokenStatus[data.message as keyof typeof TokenStatus];
+				console.log("status :"+ this.status);
 			}
 			,
 			err => {

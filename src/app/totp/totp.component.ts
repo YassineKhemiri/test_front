@@ -30,8 +30,11 @@ export class TotpComponent implements OnInit {
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.login(data.user);
+        console.log("data send successfully"+data.user)
+
       },
       err => {
+        console.log("error in sending data")
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }

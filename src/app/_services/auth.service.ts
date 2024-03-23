@@ -15,27 +15,33 @@ export class AuthService {
 
   login(credentials:any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'signin', {
-      email: credentials.username,
+      num: credentials.num,
       password: credentials.password
     }, httpOptions);
   }
 
+  
+
   register(user:any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'signup', {
-      displayName: user.displayName,
+      id:user.id,
+      num: user.num,
       email: user.email,
       password: user.password,
+      cin:user.cin,
       matchingPassword: user.matchingPassword,
       socialProvider: 'LOCAL',
       using2FA: user.using2FA
     }, httpOptions);
+
   }
   
   verify(credentials:any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'verify', credentials.code, {
     	  headers: new HttpHeaders({ 'Content-Type': 'text/plain' })
     });
-  }
+  } 
+  
 
   verifyToken(token:any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'token/verify', token, {
