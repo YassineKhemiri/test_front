@@ -12,6 +12,12 @@ import { TokenComponent } from './register/token.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { VerifiyTokenComponent } from './verifiy-token/verifiy-token.component';
+import { ContactComponent } from './contact/contact.component';
+import { UpdateImageComponent } from './update-image/update-image.component';
+import { UpdateInformationsComponent } from './update-informations/update-informations.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { ContratsComponent } from './contrats/contrats.component';
+import { ReclamationsComponent } from './reclamations/reclamations.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,6 +32,15 @@ const routes: Routes = [
   { path: 'verify2', component: VerifiyTokenComponent },
   { path: 'forgetPassword', component: ForgetPasswordComponent},
   { path: 'changePassword', component: NewPasswordComponent},
+  { path: 'contact', component: ContactComponent},
+  { path: 'updateImage', component: UpdateImageComponent},
+  { path: 'updateInformations', component: UpdateInformationsComponent},
+  { path: 'updatePassword', component: UpdatePasswordComponent},
+  { path: 'contrat', component: ContratsComponent},
+  { path: 'reclamation', component: ReclamationsComponent},
+
+
+
 
 
   { path: '', redirectTo: 'home', pathMatch: 'full' }

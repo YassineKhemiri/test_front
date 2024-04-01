@@ -76,7 +76,7 @@
 .form-group input[type="number"],
 .form-group input[type="checkbox"],
 .form-group textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -85,6 +85,7 @@
 
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
 .form-group textarea:focus {
     border-color: MediumSeaGreen;
     outline: none;
@@ -108,4 +109,12 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #068e06;
     color: white;
+}
+
+.forgot-password {
+    display: block;
+    color: green;
+    font-weight: bold;
+    text-decoration: none; /* Supprimer le soulignement */
+    margin-top: 10px; /* Espacement entre le bouton et le lien */
 }

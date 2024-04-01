@@ -17,6 +17,17 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { VerifiyTokenComponent } from './verifiy-token/verifiy-token.component';
+import { SliderComponent } from './slider/slider.component';
+import { AboutComponent } from './about/about.component';
+import { ProductsComponent } from './products/products.component';
+import { ValuesComponent } from './values/values.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContratsComponent } from './contrats/contrats.component';
+import { ContactComponent } from './contact/contact.component';
+import { UpdateImageComponent } from './update-image/update-image.component';
+import { UpdateInformationsComponent } from './update-informations/update-informations.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { ReclamationsComponent } from './reclamations/reclamations.component';
  
 @NgModule({
   declarations: [
@@ -32,7 +43,18 @@ import { VerifiyTokenComponent } from './verifiy-token/verifiy-token.component';
     BoardModeratorComponent,
     ForgetPasswordComponent,
     NewPasswordComponent,
-    VerifiyTokenComponent
+    VerifiyTokenComponent,
+    SliderComponent,
+    AboutComponent,
+    ProductsComponent,
+    ValuesComponent,
+    FooterComponent,
+    ContratsComponent,
+    ContactComponent,
+    UpdateImageComponent,
+    UpdateInformationsComponent,
+    UpdatePasswordComponent,
+    ReclamationsComponent
   ],
   imports: [
     BrowserModule,

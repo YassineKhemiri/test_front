@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -17,7 +17,7 @@ export class NewPasswordComponent {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private router:Router ,private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +29,8 @@ export class NewPasswordComponent {
         console.log(data);
 	      this.isSuccessful = true;
           this.isSignUpFailed = false;
+          this.router.navigate(['/login']);
+          
       },
       err => {
         console.log("change password failed ");

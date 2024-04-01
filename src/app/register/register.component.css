@@ -76,7 +76,7 @@
 .form-group input[type="number"],
 .form-group input[type="checkbox"],
 .form-group textarea {
-    width: 80%;
+    width:90%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
