@@ -1,24 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 
 export enum TokenStatus {
-	  VALID,
-	  INVALID,
-	  EXPIRED,
-	  SENDING,
-	  SENT
-	}
-
+  VALID,
+  INVALID,
+  EXPIRED,
+  SENDING,
+  SENT
+}
 
 @Component({
-selector: 'app-token',
-templateUrl: './token.component.html',
-styleUrls: ['./register.component.css']
+  selector: 'app-verifiy-token',
+  templateUrl: './verifiy-token.component.html',
+  styleUrl: './verifiy-token.component.css'
 })
-export class TokenComponent implements OnInit {
+export class VerifiyTokenComponent {
 
-	token = '';
+  token = '';
 	tokenStatus = TokenStatus;
 	status !: TokenStatus ;
 	errorMessage = '';
@@ -30,19 +30,18 @@ export class TokenComponent implements OnInit {
 		if(this.token){
 			this.authService.verifyToken(this.token).subscribe(
 			data => {
-				this.status = TokenStatus[data.message as keyof typeof TokenStatus];
+				//this.status = TokenStatus[data.message as keyof typeof TokenStatus];
+        this.status = data.message;
+        console.log("token :"+this.token)
+        console.log("status data:"+data.message);
+        console.log("data:"+data);
 				console.log("status :"+ this.status);
-				console.log("data message :"+data.message);
-
-				console.log("data :"+ data);
 			}
 			,
 			err => {
 				this.errorMessage = err.error.message;
 			}
 			);
-
-
 		}	
 	}
 
@@ -58,4 +57,5 @@ export class TokenComponent implements OnInit {
 		}
 		);
 	}
+
 }

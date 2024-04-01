@@ -20,8 +20,6 @@ export class AuthService {
     }, httpOptions);
   }
 
-  
-
   register(user:any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'signup', {
       id:user.id,
@@ -35,9 +33,32 @@ export class AuthService {
     }, httpOptions);
 
   }
+
+
+  changePassword(user:any): Observable<any> {
+    return this.http.post(AppConstants.AUTH_API + 'changePassword', {
+      num: user.num,
+      password: user.password
+    }, httpOptions);
+
+  }
+
+  findUserByEmailAndCin(user:any): Observable<any> {
+    return this.http.post(AppConstants.AUTH_API + 'forgetPassword', {
+      email: user.email,
+      cin:user.cin
+    }, httpOptions);
+
+  }
   
   verify(credentials:any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'verify', credentials.code, {
+    	  headers: new HttpHeaders({ 'Content-Type': 'text/plain' })
+    });
+  } 
+
+  verify2(credentials:any): Observable<any> {
+    return this.http.post(AppConstants.AUTH_API + 'verify2', credentials.code, {
     	  headers: new HttpHeaders({ 'Content-Type': 'text/plain' })
     });
   } 

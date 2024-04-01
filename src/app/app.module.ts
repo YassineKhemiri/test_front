@@ -14,6 +14,9 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule , HttpClient, provideHttpClient, withFetch} from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
+import { VerifiyTokenComponent } from './verifiy-token/verifiy-token.component';
  
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     TokenComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    BoardModeratorComponent
+    BoardModeratorComponent,
+    ForgetPasswordComponent,
+    NewPasswordComponent,
+    VerifiyTokenComponent
   ],
   imports: [
     BrowserModule,

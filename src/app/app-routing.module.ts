@@ -9,6 +9,9 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { TotpComponent } from './totp/totp.component';
 import { TokenComponent } from './register/token.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { VerifiyTokenComponent } from './verifiy-token/verifiy-token.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,6 +23,11 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'totp', component: TotpComponent },
   { path: 'verify', component: TokenComponent },
+  { path: 'verify2', component: VerifiyTokenComponent },
+  { path: 'forgetPassword', component: ForgetPasswordComponent},
+  { path: 'changePassword', component: NewPasswordComponent},
+
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

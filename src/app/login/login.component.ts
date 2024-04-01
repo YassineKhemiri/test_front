@@ -54,14 +54,19 @@ export class LoginComponent {
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         if(data.authenticated){
+          console.log(" login with success")
 	        this.login(data.user);
         } else {
+          console.log(" login with success 2")
         	this.router.navigate(['/totp']);
         }
       },
       err => {
+        console.log("something went wrong here in login")
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+        console.log(this.errorMessage)
+
       }
     );
   }
