@@ -18,6 +18,7 @@ import { UpdateInformationsComponent } from './update-informations/update-inform
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ContratsComponent } from './contrats/contrats.component';
 import { ReclamationsComponent } from './reclamations/reclamations.component';
+import { UnProduitComponent } from './un-produit/un-produit.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path: 'updatePassword', component: UpdatePasswordComponent},
   { path: 'contrat', component: ContratsComponent},
   { path: 'reclamation', component: ReclamationsComponent},
+  { path: 'produit', component:UnProduitComponent },
+
 
 
 

@@ -28,6 +28,7 @@ import { UpdateImageComponent } from './update-image/update-image.component';
 import { UpdateInformationsComponent } from './update-informations/update-informations.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ReclamationsComponent } from './reclamations/reclamations.component';
+import { UnProduitComponent } from './un-produit/un-produit.component';
  
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ReclamationsComponent } from './reclamations/reclamations.component';
     UpdateImageComponent,
     UpdateInformationsComponent,
     UpdatePasswordComponent,
-    ReclamationsComponent
+    ReclamationsComponent,
+    UnProduitComponent
   ],
   imports: [
     BrowserModule,
