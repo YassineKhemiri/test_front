@@ -60,6 +60,7 @@
 }
 
 .form-group {
+    padding-right: 40px;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -76,6 +77,7 @@
 .form-group input[type="number"],
 .form-group input[type="checkbox"],
 .form-group textarea {
+    padding-right: 40px;
     width: 90%;
     padding: 10px;
     border-radius: 5px;
@@ -117,4 +119,25 @@ button[type="submit"]:hover {
     font-weight: bold;
     text-decoration: none; /* Supprimer le soulignement */
     margin-top: 10px; /* Espacement entre le bouton et le lien */
+}
+
+
+.password-input-container {
+    position: relative;
+}
+
+.password-input-container input[type="password"] {
+    padding-right: 40px; /* Ajoutez de l'espace à droite pour l'icône */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajustez la position à droite */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    color: #32CD32; /* Changez la couleur de l'icône au survol */
 }

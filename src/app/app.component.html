@@ -6,30 +6,25 @@
 			</a>
 		</div>
 
-		<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button> -->
-		<!-- <div class="collapse navbar-collapse" id="navbarCollapse"> -->
 		<nav>
 			<ul routerLinkActive="active">
-				<li ><a href="/home"  routerLink="home">Home</a></li>
-				<li ><a href="/contact"  routerLink="contact">contact</a></li>
+				<li *ngIf="!showAdminBoard"><a href="/home"  routerLink="home">Home</a></li>
 
 				<li *ngIf="showAdminBoard"><a href="/admin" class="nav-link" routerLink="admin">Admin
 						Board</a></li>
-				<li  *ngIf="showModeratorBoard"><a href="/mod" 
-						routerLink="mod">Moderator Board</a></li>
-				<li ><a href="/user" *ngIf="isLoggedIn" routerLink="user">User</a></li>
-				<li ><a href="/order"  *ngIf="isLoggedIn" routerLink="order">Order</a>
+				<li  *ngIf="showModeratorBoard">
+					<a href="/mod"  routerLink="mod">Moderator Board</a>
 				</li>
+				<li ><a href="/contrat" *ngIf="isLoggedIn"  routerLink="contrat/{{id}}">contrat</a></li>
+				<li ><a href="/contact"  routerLink="contact">contact</a></li>
+
+
 			</ul>
 			<ul  *ngIf="!isLoggedIn">
 				<li ><a href="/register"  routerLink="register">Sign Up</a></li>
 				<li ><a href="/login"  routerLink="login">Login</a></li>
 			</ul>
 			<ul  *ngIf="isLoggedIn">
-				<li ><a href="/profile"  routerLink="profile">{{ username }}</a></li>
 				<li ><a href  (click)="logout()">LogOut</a></li>
 			</ul>
 		</nav>

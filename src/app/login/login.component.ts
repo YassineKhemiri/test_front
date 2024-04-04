@@ -20,6 +20,8 @@ export class LoginComponent {
   facebookURL = AppConstants.FACEBOOK_AUTH_URL;
   githubURL = AppConstants.GITHUB_AUTH_URL;
   linkedinURL = AppConstants.LINKEDIN_AUTH_URL;
+  // Ajoutez une variable pour suivre l'état de visibilité du mot de passe
+  passwordVisible: boolean = false;
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private route: ActivatedRoute, private userService: UserService, private router: Router) {}
 
@@ -48,6 +50,13 @@ export class LoginComponent {
 	    this.isLoginFailed = true;
   	}
   }
+
+   
+
+   // Méthode pour basculer la visibilité du mot de passe
+   togglePasswordVisibility(): void {
+     this.passwordVisible = !this.passwordVisible;
+   }
 
   onSubmit(): void {
     this.authService.login(this.form).subscribe(

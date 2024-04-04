@@ -40,12 +40,7 @@ const routes: Routes = [
   { path: 'contrat', component: ContratsComponent},
   { path: 'reclamation', component: ReclamationsComponent},
   { path: 'produit', component:UnProduitComponent },
-
-
-
-
-
-
+  {path:"contrat/:id",component:ContratsComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
