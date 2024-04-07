@@ -19,6 +19,12 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { ContratsComponent } from './contrats/contrats.component';
 import { ReclamationsComponent } from './reclamations/reclamations.component';
 import { UnProduitComponent } from './un-produit/un-produit.component';
+import { ListeContratsComponent } from './liste-contrats/liste-contrats.component';
+import { ListeUsersComponent } from './liste-users/liste-users.component';
+import { ListeReclamationsComponent } from './liste-reclamations/liste-reclamations.component';
+import { AddBrancheComponent } from './add-branche/add-branche.component';
+import { BranchesComponent } from './branches/branches.component';
+import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,7 +46,20 @@ const routes: Routes = [
   { path: 'contrat', component: ContratsComponent},
   { path: 'reclamation', component: ReclamationsComponent},
   { path: 'produit', component:UnProduitComponent },
-  {path:"contrat/:id",component:ContratsComponent},
+  { path: 'listeContrats', component:ListeContratsComponent },
+  { path: 'listeAdherent', component:ListeUsersComponent },
+  { path: 'listeReclamation', component:ListeReclamationsComponent },
+  {path:'contrat/:id',component:ContratsComponent},
+  { path: 'add-branche', component:AddBrancheComponent },
+  { path: 'add-branche/:id', component:AddBrancheComponent },
+  { path: 'branches', component:BranchesComponent },
+  { path: 'produits', component:ListeProduitsComponent },
+
+
+
+
+
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

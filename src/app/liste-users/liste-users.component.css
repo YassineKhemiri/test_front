@@ -196,22 +196,4 @@ tr:hover {
     background-color: #3e8155;
 }
 
-.payment-button {
-    text-align: center; /* Centrer le bouton */
-    margin-top: 20px; /* Espacement depuis la liste des contrats */
-}
 
-
-.payment-button button {
-    padding: 10px 20px; /* Ajoutez du rembourrage au bouton */
-    background-color: #3e8155; /* Couleur de fond */
-    color: #fff; /* Couleur du texte */
-    border: none; /* Supprimez la bordure */
-    border-radius: 5px; /* Ajoutez des coins arrondis */
-    cursor: pointer; /* Curseur de type pointer */
-    transition: background-color 0.3s ease; /* Transition en douceur pour le changement de couleur de fond */
-}
-
-.payment-button button:hover {
-    background-color: #9cbd4b; /* Changement de couleur de fond au survol */
-}

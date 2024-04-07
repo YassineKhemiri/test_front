@@ -29,6 +29,13 @@ import { UpdateInformationsComponent } from './update-informations/update-inform
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ReclamationsComponent } from './reclamations/reclamations.component';
 import { UnProduitComponent } from './un-produit/un-produit.component';
+import { ListeUsersComponent } from './liste-users/liste-users.component';
+import { ListeContratsComponent } from './liste-contrats/liste-contrats.component';
+import { ListeReclamationsComponent } from './liste-reclamations/liste-reclamations.component';
+import { BranchesComponent } from './branches/branches.component';
+import { AddBrancheComponent } from './add-branche/add-branche.component';
+import { AddProduitComponent } from './add-produit/add-produit.component';
+import { ListeProduitsComponent } from './liste-produits/liste-produits.component';
  
 @NgModule({
   declarations: [
@@ -56,7 +63,14 @@ import { UnProduitComponent } from './un-produit/un-produit.component';
     UpdateInformationsComponent,
     UpdatePasswordComponent,
     ReclamationsComponent,
-    UnProduitComponent
+    UnProduitComponent,
+    ListeUsersComponent,
+    ListeContratsComponent,
+    ListeReclamationsComponent,
+    BranchesComponent,
+    AddBrancheComponent,
+    AddProduitComponent,
+    ListeProduitsComponent
   ],
   imports: [
     BrowserModule,

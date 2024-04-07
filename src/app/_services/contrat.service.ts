@@ -18,4 +18,8 @@ export class ContratService {
   getUserContrats(id:any): Observable<any> {
     return this.http.get(AppConstants.API_URL+`contrat/${id}`, httpOptions);
   }
+
+  getAllContrats(): Observable<any> {
+    return this.http.get(AppConstants.API_URL+"listeContrats", httpOptions);
+  }
 }
