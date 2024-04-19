@@ -30,8 +30,9 @@ export class VerifiyTokenComponent {
 		if(this.token){
 			this.authService.verifyToken(this.token).subscribe(
 			data => {
-				//this.status = TokenStatus[data.message as keyof typeof TokenStatus];
-        this.status = data.message;
+				this.status = TokenStatus[data.message as keyof typeof TokenStatus];
+        //this.status = data.message;
+		console.log("status data:"+TokenStatus[data.message as keyof typeof TokenStatus]);
         console.log("token :"+this.token)
         console.log("status data:"+data.message);
         console.log("data:"+data);

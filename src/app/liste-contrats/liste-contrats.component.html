@@ -1,0 +1,58 @@
+<div class="container-sidebar">
+
+    <div class="sidebar">
+        <ul>
+            <li><a  routerLink="../listeAdherent">liste adherents</a></li>
+            <li><a  routerLink="../listeContrats">liste contrats</a></li>
+            <li><a  routerLink="../listeReclamation">liste Reclamations</a></li>
+            <li><a  routerLink="../branches">liste Branches</a></li>
+            <li><a  routerLink="../produits">liste Produits</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="page">
+
+            <div class="containerListe">
+                <h1>Liste Contrats</h1>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Num Contrat</th>
+                                <th>Code Branche</th>
+                                <th>Libelle Branche</th>
+                                <th>Date d'effet</th>
+                                <th>Date fin d'effet</th>
+                                <th>Prix</th>
+                                <th>Date de paiement</th>
+                                <th>Référencement</th>
+                                <th>Statut de paiement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let contrat of contrats" >
+                                <td>{{contrat.numContrat}}</td>
+                                <td>{{contrat.branche.codeBranche}}</td>
+                                <td>{{contrat.branche.libelleBranche}}</td>
+                                <td>{{contrat.date_effet}}</td>
+                                <td>{{contrat.date_fin_effet}}</td>
+                                <td>{{contrat.prix}}</td>
+                                <td>{{contrat.date_paiement}}</td>
+                                <td>{{contrat.referencement}}</td>
+                                <td>
+                                    {{ contrat.paye ? 'payé' : 'non payé' }}
+                                </td>
+                            </tr>
+                            <!-- Ajoutez d'autres lignes de contrats ici si nécessaire -->
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+  

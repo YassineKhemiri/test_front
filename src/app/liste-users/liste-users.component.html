@@ -1,0 +1,57 @@
+<div class="container-sidebar">
+
+    <div class="sidebar">
+        <div class="sidebar">
+            <ul>
+                <li><a  routerLink="../listeAdherent">liste adherents</a></li>
+                <li><a  routerLink="../listeContrats">liste contrats</a></li>
+                <li><a  routerLink="../listeReclamation">liste Reclamations</a></li>
+                <li><a  routerLink="../branches">liste Branches</a></li>
+                <li><a  routerLink="../produits">liste Produits</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="page">
+            <div class="containerListe">
+                <h1>Liste Users</h1>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>UserName</th>
+                                <th>Num Adherent</th>
+                                <th>email</th>
+                                <th>Addresse</th>
+                                <th>CIN</th>
+                                <th>Sex</th>
+                                <th>Date Naissance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let user of users">
+                                <tr *ngIf="user.displayName.indexOf('Admin') === -1">
+                                    <td>{{user.id}}</td>
+                                    <td>{{user.displayName}}</td>
+                                    <td>{{user.num}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.address}}</td>
+                                    <td>{{user.cin}}</td>
+                                    <td>{{user.sex}}</td>
+                                    <td>{{user.birth_date}}</td>
+
+                                </tr>
+                            </ng-container>
+                            <!-- Ajoutez d'autres lignes de contrats ici si nécessaire -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

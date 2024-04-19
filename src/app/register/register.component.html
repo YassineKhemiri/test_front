@@ -1,4 +1,5 @@
 <section class="contact">
+<<<<<<< HEAD
     <div class="container">
         <div class="contact-container">
             <div class="contact-image">
@@ -67,3 +68,122 @@
         </div>
     </div>
 </section>
+=======
+	<div class="container">
+		<div class="contact-container">
+
+			<div class="contact-image">
+				<img src="../../assets/img/sign_up.jpg" alt="Description de l'image">
+			</div>
+			<div class="contact-form-container">
+				<h2>s'inscrire</h2>
+				<form class="contact-form" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+					#f="ngForm" novalidate>
+					<div class="form-group">
+						<label for="num">Num adherent</label>
+						<div class="password-input">
+						<input type="text" name="num" [(ngModel)]="form.num" required minlength="9" maxlength="9"
+							#num="ngModel" />
+						</div>
+						<div *ngIf="f.submitted && num.invalid">
+							<div style="color: red;" *ngIf="num.errors?.['required']"> Num Adherent is required </div>
+							<div style="color: red;" *ngIf="num.errors?.['minlength']">Num must be at least 9 characters
+							</div>
+							<div style="color: red;" *ngIf="num.errors?.['maxlength']">Num must be at most 9 characters
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label> 
+						<div class="password-input">
+						<input type="email" name="email" [(ngModel)]="form.email"
+							required email #email="ngModel" />
+						</div>
+						<div *ngIf="f.submitted && email.invalid">
+							<div style="color: red;" *ngIf="email.errors?.['required']">Email is required</div>
+							<div style="color: red;" *ngIf="email.errors?.['email']">Email must be a valid email address
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="cin">CIN</label>
+						<div class="password-input">
+							<input type="number" name="cin" [(ngModel)]="form.cin" required minlength="8" maxlength="8"
+								#cin="ngModel" />
+						</div>
+						<div class="alert-danger" *ngIf="f.submitted && cin.invalid">
+							<div *ngIf="f.submitted && num.invalid">
+								<div style="color: red;" *ngIf="cin.errors?.['required']"> CIN is required
+								</div>
+								<div style="color: red;" *ngIf="cin.errors?.['minlength']">Num must be at least 8
+									characters</div>
+								<div style="color: red;" *ngIf="cin.errors?.['maxlength']">Num must be at most 8
+									characters</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Password</label>
+						<div class="password-input">
+							<input [type]="passwordVisible ? 'text' : 'password'" type="password" name="password"
+								[(ngModel)]="form.password" required minlength="6"
+								[pattern]="passwordPattern"
+								title="Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
+								#password="ngModel" />
+							<!-- <i class="fas fa-eye" (click)="togglePasswordVisibility()"></i> -->
+							<i class="toggle-password fas" [class.fa-eye]="!passwordVisible"
+								[class.fa-eye-slash]="passwordVisible" (click)="togglePasswordVisibility()"></i>
+						</div>
+						<div *ngIf="f.submitted && password.invalid">
+							<div style="color: red;" *ngIf="password.errors?.['required']">Password is required</div>
+							<div style="color: red;" *ngIf="password.errors?.['minlength']">Password must be at least 6
+								characters</div>
+							<div style="color: red;" *ngIf="password.errors?.['pattern']">Password must contain at least
+								one lowercase letter, one uppercase letter, one number, and one special character</div>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="matchingPassword">Confirm Password</label>
+						<div class="password-input">
+							<input [type]="passwordVisible ? 'text' : 'password'" type="password" name="matchingPassword" [(ngModel)]="form.matchingPassword" required
+								minlength="6" #matchingPassword="ngModel" />
+								<i class="toggle-password fas" [class.fa-eye]="!passwordVisible"
+								[class.fa-eye-slash]="passwordVisible" (click)="togglePasswordVisibility()"></i>
+						</div>
+
+						<div *ngIf="f.submitted && matchingPassword.invalid">
+							<div style="color: red;" *ngIf="matchingPassword.errors?.['required']">Confirm Password is
+								required</div>
+							<div style="color: red;" *ngIf="matchingPassword.errors?.['minlength']">Confirm Password
+								must be at least 6 characters</div>
+						</div>
+					</div>
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input" name="using2FA" [(ngModel)]="form.using2FA"
+							#using2FA="ngModel" /><label class="form-check-label" for="using2FA">Use
+							Two Step Verification</label>
+					</div>
+
+					<button type="submit">Envoyer</button>
+
+
+					<div style="color: red;" *ngIf="f.submitted && isSignUpFailed">
+						Signup failed!<br />{{ errorMessage }}
+					</div>
+				</form>
+				<div style="color: green;" *ngIf="isSuccessful">
+					Your registration is successful! We've sent you a verification mail to your email account.
+					<div *ngIf="isUsing2FA">
+						<p>Scan this QR code using Google Authenticator app on your phone to use it later to login</p>
+						<img src="{{qrCodeImage}}" class="img-fluid" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+>>>>>>> 07aec3e4f09434ca36af325b8152e8ff55dbe588

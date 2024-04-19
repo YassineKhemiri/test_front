@@ -1,0 +1,312 @@
+.contact {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 50px; /* Ajoutez de l'espace entre la section de contact et le header */
+    margin-bottom: 50px; /* Ajoutez de l'espace entre la section de contact et le footer */
+}
+
+
+.contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #32CD32 ;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between; /* Pour aligner l'image et le formulaire sur la même ligne */
+    border: 2px solid #32CD32; /* Ajouter une bordure */
+    border-radius: 10px; /* Arrondir les coins */
+    overflow: hidden; /* Pour éviter que les coins arrondis ne dépassent */
+    max-width: 1000px; /* Définir la largeur maximale du cadre */
+    width:600px;
+    margin: 0 auto; /* Pour centrer le cadre horizontalement */
+}
+
+
+.contact-image {
+    flex: 0 0 40%; /* Pour que l'image occupe 30% de la largeur */
+    display: flex; /* Pour aligner l'image au centre */
+    justify-content: center; /* Pour aligner l'image au centre */
+    align-items: center; /* Pour aligner l'image au centre */
+    overflow: hidden; /* Pour éviter que les coins arrondis ne dépassent */
+}
+
+.contact-image img {
+    width: 95%; /* Ajustez la taille de l'image selon votre préférence */
+    border-radius: 10px; /* Arrondir tous les coins */
+}
+
+.contact-form-container {
+    flex: 0 0 95%; /* Pour que le formulaire occupe 70% de la largeur */
+}
+
+.contact-form {
+    padding: 20px; /* Ajouter un remplissage au formulaire */
+}
+
+
+.contact-form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="checkbox"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    border-color: MediumSeaGreen;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #068e06;
+    color: white;
+}
+
+
+.container-sidebar {
+    position: relative;
+    margin-top: 100px;
+    /* La hauteur du header */
+    min-height: calc(100vh - 80px);
+    /* Hauteur totale moins la hauteur du header */
+}
+
+.sidebar {
+    width: 250px;
+    /* Largeur du sidebar */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #3e8155;
+    border-radius: 10px;
+    /* Angles arrondis */
+
+
+}
+
+.content {
+    margin-left: 270px;
+    /* Largeur du sidebar + espace */
+    padding: 20px;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Couleur de fond plus foncée pour le contenu */
+
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+
+.page {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.page h2 {
+    margin-bottom: 20px;
+}
+
+.containerListe h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+.containerListe {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    /* Changer la taille du texte des titres de colonnes */
+
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    /* Changer la taille du texte des titres de colonnes */
+
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #a7a6a6; /* Couleur de fond au survol */
+    cursor: pointer; /* Curseur de type pointer au survol */
+}
+
+.paye {
+    color: green;
+}
+
+.non-paye {
+    color: red;
+}
+
+
+.containerReclamation {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerReclamation h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.containerReclamation form {
+    display: grid;
+    gap: 20px;
+}
+
+.containerReclamation form label {
+    font-weight: bold;
+}
+
+.containerReclamation form input[type="text"],
+.containerReclamation form input[type="email"],
+.containerReclamation form select,
+.containerReclamation form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.containerReclamation form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.containerReclamation form input[type="file"] {
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.containerReclamation form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9cbd4b;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.containerReclamation form button:hover {
+    background-color: #3e8155;
+}
+

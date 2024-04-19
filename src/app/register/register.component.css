@@ -112,3 +112,32 @@ button[type="submit"]:hover {
     background-color: #068e06;
     color: white;
 }
+
+.password-input-container {
+    position: relative;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input[type="password"],
+.password-input input[type="text"],
+.password-input input[type="email"],
+.password-input input[type="number"]
+ {
+    padding-right: 40px; /* Ajoutez de l'espace à droite pour l'icône */
+}
+
+.password-input i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+}
+
+.password-input i:hover {
+    color: #666;
+}

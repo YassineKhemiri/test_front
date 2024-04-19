@@ -27,7 +27,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let contrat of contrats">
+                            <tr *ngFor="let contrat of contrats" (click)="showPaymentButton(contrat)"
+                                [class.paiement-possible]="!contrat.paye">
                                 <td>{{contrat.numContrat}}</td>
                                 <td>{{contrat.branche.codeBranche}}</td>
                                 <td>{{contrat.branche.libelleBranche}}</td>
@@ -40,12 +41,13 @@
                                     {{ contrat.paye ? 'payé' : 'non payé' }}
                                 </td>
                             </tr>
-
-
-
                             <!-- Ajoutez d'autres lignes de contrats ici si nécessaire -->
                         </tbody>
                     </table>
+                </div>
+                <!-- Bouton "Payer" conditionnel -->
+                <div class="payment-button" *ngIf="selectedContrat && !selectedContrat.paye">
+                    <button (click)="payerContrat(selectedContrat)">Payer</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../_services/auth.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-register',
@@ -14,6 +16,10 @@ export class RegisterComponent implements OnInit {
   isUsing2FA = false;
   errorMessage = '';
   qrCodeImage = '';
+  // Autres propriétés existantes...
+  passwordVisible: boolean = false;
+  passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
 
   constructor(private authService: AuthService) { }
 
@@ -29,7 +35,17 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+
+
+  // Autres méthodes existantes...
+
+   // Méthode pour basculer la visibilité du mot de passe
+   togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
+
   onSubmit(): void {
+<<<<<<< HEAD
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe(
         data => {
@@ -55,5 +71,27 @@ export class RegisterComponent implements OnInit {
     } else {
       this.registerForm.markAllAsTouched(); // Ensure all fields are touched to show errors
     }
+=======
+    this.authService.register(this.form).subscribe(
+      data => {
+        console.log("sign up success ");
+        Swal.fire('Success', 'acoount activated successfully', 'success');
+        console.log(data);
+        if(data.using2FA){
+        	this.isUsing2FA = true;
+        	this.qrCodeImage = data.qrCodeImage;
+          console.log("sign up success with 2fa");
+        }
+	      this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        console.log("sign up failed ");
+        console.error('Error activation account :', err);
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
+>>>>>>> 07aec3e4f09434ca36af325b8152e8ff55dbe588
   }
 }

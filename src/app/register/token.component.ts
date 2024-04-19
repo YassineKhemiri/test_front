@@ -33,8 +33,9 @@ export class TokenComponent implements OnInit {
 				this.status = TokenStatus[data.message as keyof typeof TokenStatus];
 				console.log("status :"+ this.status);
 				console.log("data message :"+data.message);
-
 				console.log("data :"+ data);
+				console.log("status data :"+TokenStatus[data.message as keyof typeof TokenStatus]);
+
 			}
 			,
 			err => {
