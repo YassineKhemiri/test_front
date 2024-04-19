@@ -11,7 +11,7 @@ import { TokenComponent } from './register/token.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule , HttpClient, provideHttpClient, withFetch} from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
@@ -29,6 +29,8 @@ import { UpdateInformationsComponent } from './update-informations/update-inform
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ReclamationsComponent } from './reclamations/reclamations.component';
 import { UnProduitComponent } from './un-produit/un-produit.component';
+import { AgenceComponent } from './agence/agence.component';
+
  
 @NgModule({
   declarations: [
@@ -56,13 +58,18 @@ import { UnProduitComponent } from './un-produit/un-produit.component';
     UpdateInformationsComponent,
     UpdatePasswordComponent,
     ReclamationsComponent,
-    UnProduitComponent
+    UnProduitComponent,
+    AgenceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    
+
+   
   ],
   providers: [
     provideClientHydration(),

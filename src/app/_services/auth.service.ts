@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { AppConstants } from '../common/app.constants';
 
 const httpOptions = {
@@ -20,18 +20,24 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(user:any): Observable<any> {
+  register(user: any): Observable<any> {
     return this.http.post(AppConstants.AUTH_API + 'signup', {
-      id:user.id,
+      id: user.id,
       num: user.num,
       email: user.email,
       password: user.password,
-      cin:user.cin,
+      cin: user.cin,
       matchingPassword: user.matchingPassword,
       socialProvider: 'LOCAL',
       using2FA: user.using2FA
-    }, httpOptions);
-
+    }, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }).pipe(
+      catchError(err => {
+        // Handle the error and rethrow it for the component to catch
+        return throwError(err);
+      })
+    );
   }
 
 

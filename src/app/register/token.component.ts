@@ -3,8 +3,8 @@ import { AuthService } from '../_services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 export enum TokenStatus {
-	  VALID,
 	  INVALID,
+	  VALID,
 	  EXPIRED,
 	  SENDING,
 	  SENT

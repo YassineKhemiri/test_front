@@ -8,6 +8,7 @@
 
 		<nav>
 			<ul routerLinkActive="active">
+				<li ><a href="/agences"  routerLink="agences">Notre réseau</a></li>
 				<li *ngIf="!showAdminBoard"><a href="/home"  routerLink="home">Home</a></li>
 
 				<li *ngIf="showAdminBoard"><a href="/admin" class="nav-link" routerLink="admin">Admin
@@ -34,5 +35,6 @@
 </header>
 
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+	
+	<app-footer></app-footer>
 

@@ -19,6 +19,7 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { ContratsComponent } from './contrats/contrats.component';
 import { ReclamationsComponent } from './reclamations/reclamations.component';
 import { UnProduitComponent } from './un-produit/un-produit.component';
+import { AgenceComponent } from './agence/agence.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'reclamation', component: ReclamationsComponent},
   { path: 'produit', component:UnProduitComponent },
   {path:"contrat/:id",component:ContratsComponent},
+  {path:"agences",component:AgenceComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
