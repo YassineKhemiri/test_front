@@ -9,36 +9,35 @@
 				<form class="contact-form" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()"
 					#f="ngForm" novalidate>
 					<div class="form-group">
-						<label for="num">Num adherent</label> <input type="text" name="num" [(ngModel)]="form.num"
-							required #num="ngModel" />
+						<label for="num">Num adherent</label>
+						<div class="password-input">
+							<input type="text" name="num" [(ngModel)]="form.num" required #num="ngModel" />
+						</div>
 						<div style="color: red;" role="alert" *ngIf="f.submitted && num.invalid">num adherent is
 							required!</div>
 					</div>
-					<!-- <div class="form-group">
-						<label for="password">Password</label> <input type="password" name="password"
-							[(ngModel)]="form.password" required minlength="6" #password="ngModel" />
-						<div  role="alert" *ngIf="f.submitted && password.invalid">
-							<div style="color: red;" *ngIf="password.errors?.['required']">Password is required</div>
-							<div style="color: red;" *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</div>
-						</div>
-					</div> -->
-
 					<div class="form-group">
-						<label for="password">Password</label> 
-						<div class="password-input-container">
-							<input [type]="passwordVisible ? 'text' : 'password'" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
-							<i class="toggle-password fas" [class.fa-eye]="!passwordVisible" [class.fa-eye-slash]="passwordVisible" (click)="togglePasswordVisibility()"></i>
+						<label for="password">Password</label>
+						<div class="password-input">
+							<div class="password-input-container">
+								<input [type]="passwordVisible ? 'text' : 'password'" name="password"
+									[(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+								<i class="toggle-password fas" [class.fa-eye]="!passwordVisible"
+									[class.fa-eye-slash]="passwordVisible" (click)="togglePasswordVisibility()"></i>
+							</div>
 						</div>
-						<div  role="alert" *ngIf="f.submitted && password.invalid">
+						<div role="alert" *ngIf="f.submitted && password.invalid">
 							<div style="color: red;" *ngIf="password.errors?.['required']">Password is required</div>
-							<div style="color: red;" *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</div>
+							<div style="color: red;" *ngIf="password.errors?.['minlength']">Password must be at least 6
+								characters</div>
 						</div>
 					</div>
-					
+
 
 					<button type="submit">Envoyer</button>
 
-					<a href="/forgetPassword" routerLink="../forgetPassword" class="forgot-password">Mot de Passe Oublié ?</a>
+					<a href="/forgetPassword" routerLink="../forgetPassword" class="forgot-password">Mot de Passe Oublié
+						?</a>
 
 
 

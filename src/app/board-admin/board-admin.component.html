@@ -2,18 +2,78 @@
 
     <div class="sidebar">
         <ul>
-            <li><a  routerLink="../listeAdherent">liste adherents</a></li>
-            <li><a  routerLink="../listeContrats">liste contrats</a></li>
-            <li><a  routerLink="../listeReclamation">liste Reclamations</a></li>
-            <li><a  routerLink="../branches">liste Branches</a></li>
-            <li><a  routerLink="../produits">liste Produits</a></li>
+            <li><a routerLink="../listeAdherent">liste adherents</a></li>
+            <li><a routerLink="../listeContrats">liste contrats</a></li>
+            <li><a routerLink="../listeReclamation">liste Reclamations</a></li>
+            <li><a routerLink="../branches">liste Branches</a></li>
+            <li><a routerLink="../produits">liste Produits</a></li>
         </ul>
     </div>
 
     <div class="content">
         <div class="page">
-            <h1>Welcome to DashBoard Admin</h1>
+            <h1>Admin DashBoard</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Users</h3>
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <p class="card-number">{{users}}</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Contrats</h3>
+                        <div class="card-icon"><i class="fas fa-file-contract"></i></div>
+                        <p  class="card-number">{{contrats}}</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Produits</h3>
+                        <div class="card-icon"><i class="fas fa-box"></i></div>
+                        <p class="card-number">300</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Reclamations</h3>
+                        <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <p class="card-number">200</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="containerListe">
+                <h1>Contrats par branche</h1>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>libelle branche</th>
+                                <th>Pourcentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let contrat of tab"
+                                [class.paiement-possible]="!contrat.paye">
+                                <td>{{contrat.branche.libelleBranche}}</td>
+                                <td>{{contrat.count}}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            
+           
+            <!-- <div class="charts">
+                <canvas class="chart" id="dochart"></canvas>
+                <canvas class="chart" id="mychart"></canvas>
+                <canvas class="chart" id="mychart2"></canvas>
+            </div> -->
+
         </div>
     </div>
 </div>
-  

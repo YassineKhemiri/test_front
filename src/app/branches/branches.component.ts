@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BrancheService } from '../_services/branche.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-branches',
@@ -22,8 +24,14 @@ export class BranchesComponent {
 
   deleteBranche(id:any){
     this.brancheService.deleteBranche(id).subscribe(
-      (response)=>{console.log("here response deleted from BE ",response);
+      (response)=>{
+      console.log("here response deleted from BE ",response);
+      Swal.fire('Success', 'Branche deleted successfully', 'success');
       this.getAllbranches()
+      }, 
+      (error) => {
+        Swal.fire('Error', 'Failed to delete branche', 'error');
+        console.error('Error deleting branche:', error);
       }
     )
   }

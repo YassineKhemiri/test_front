@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-register',
@@ -15,16 +17,30 @@ export class RegisterComponent implements OnInit {
   isUsing2FA = false;
   errorMessage = '';
   qrCodeImage = '';
+  // Autres propriétés existantes...
+  passwordVisible: boolean = false;
+  passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+
+
+  // Autres méthodes existantes...
+
+   // Méthode pour basculer la visibilité du mot de passe
+   togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
+
   onSubmit(): void {
     this.authService.register(this.form).subscribe(
       data => {
         console.log("sign up success ");
+        Swal.fire('Success', 'acoount activated successfully', 'success');
         console.log(data);
         if(data.using2FA){
         	this.isUsing2FA = true;
@@ -36,6 +52,7 @@ export class RegisterComponent implements OnInit {
       },
       err => {
         console.log("sign up failed ");
+        console.error('Error activation account :', err);
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }

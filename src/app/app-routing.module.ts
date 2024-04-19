@@ -54,12 +54,6 @@ const routes: Routes = [
   { path: 'add-branche/:id', component:AddBrancheComponent },
   { path: 'branches', component:BranchesComponent },
   { path: 'produits', component:ListeProduitsComponent },
-
-
-
-
-
-
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

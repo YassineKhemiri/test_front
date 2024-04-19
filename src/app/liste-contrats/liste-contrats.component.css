@@ -1,4 +1,5 @@
 .container-sidebar {
+    display: flex;
     position: relative;
     margin-top: 100px;
     /* La hauteur du header */
@@ -13,12 +14,14 @@
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
+    background-color: #3e8155;
     border-radius: 10px;
     /* Angles arrondis */
 
 
 }
+
 
 .content {
     margin-left: 270px;
@@ -28,8 +31,8 @@
     padding: 20px;
     background-color: #f0f0f0;
     /* Couleur de fond plus foncée pour le contenu */
-
 }
+
 
 
 .sidebar ul {
@@ -58,11 +61,14 @@
 }
 
 
+
 .page {
+
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    
 }
 
 .page h2 {
@@ -194,24 +200,4 @@ tr:hover {
 
 .containerReclamation form button:hover {
     background-color: #3e8155;
-}
-
-.payment-button {
-    text-align: center; /* Centrer le bouton */
-    margin-top: 20px; /* Espacement depuis la liste des contrats */
-}
-
-
-.payment-button button {
-    padding: 10px 20px; /* Ajoutez du rembourrage au bouton */
-    background-color: #3e8155; /* Couleur de fond */
-    color: #fff; /* Couleur du texte */
-    border: none; /* Supprimez la bordure */
-    border-radius: 5px; /* Ajoutez des coins arrondis */
-    cursor: pointer; /* Curseur de type pointer */
-    transition: background-color 0.3s ease; /* Transition en douceur pour le changement de couleur de fond */
-}
-
-.payment-button button:hover {
-    background-color: #9cbd4b; /* Changement de couleur de fond au survol */
 }

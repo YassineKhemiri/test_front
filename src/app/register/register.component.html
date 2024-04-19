@@ -11,10 +11,12 @@
 					#f="ngForm" novalidate>
 					<div class="form-group">
 						<label for="num">Num adherent</label>
+						<div class="password-input">
 						<input type="text" name="num" [(ngModel)]="form.num" required minlength="9" maxlength="9"
 							#num="ngModel" />
+						</div>
 						<div *ngIf="f.submitted && num.invalid">
-							<div style="color: red;" *ngIf="num.errors?.['required']"> Display Name is required </div>
+							<div style="color: red;" *ngIf="num.errors?.['required']"> Num Adherent is required </div>
 							<div style="color: red;" *ngIf="num.errors?.['minlength']">Num must be at least 9 characters
 							</div>
 							<div style="color: red;" *ngIf="num.errors?.['maxlength']">Num must be at most 9 characters
@@ -22,21 +24,26 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="email">Email</label> <input type="email" name="email" [(ngModel)]="form.email"
+						<label for="email">Email</label> 
+						<div class="password-input">
+						<input type="email" name="email" [(ngModel)]="form.email"
 							required email #email="ngModel" />
+						</div>
 						<div *ngIf="f.submitted && email.invalid">
 							<div style="color: red;" *ngIf="email.errors?.['required']">Email is required</div>
 							<div style="color: red;" *ngIf="email.errors?.['email']">Email must be a valid email address
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group">
-						<label for="cin">CIN</label> <input type="number" name="cin" [(ngModel)]="form.cin" required
-							minlength="8" maxlength="8" #cin="ngModel" />
+						<label for="cin">CIN</label>
+						<div class="password-input">
+							<input type="number" name="cin" [(ngModel)]="form.cin" required minlength="8" maxlength="8"
+								#cin="ngModel" />
+						</div>
 						<div class="alert-danger" *ngIf="f.submitted && cin.invalid">
 							<div *ngIf="f.submitted && num.invalid">
-								<div style="color: red;" *ngIf="cin.errors?.['required']"> Display Name is required
+								<div style="color: red;" *ngIf="cin.errors?.['required']"> CIN is required
 								</div>
 								<div style="color: red;" *ngIf="cin.errors?.['minlength']">Num must be at least 8
 									characters</div>
@@ -49,18 +56,34 @@
 
 					<div class="form-group">
 						<label>Password</label>
-						<input type="password" name="password" [(ngModel)]="form.password" required minlength="6"
-							#password="ngModel" />
+						<div class="password-input">
+							<input [type]="passwordVisible ? 'text' : 'password'" type="password" name="password"
+								[(ngModel)]="form.password" required minlength="6"
+								[pattern]="passwordPattern"
+								title="Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
+								#password="ngModel" />
+							<!-- <i class="fas fa-eye" (click)="togglePasswordVisibility()"></i> -->
+							<i class="toggle-password fas" [class.fa-eye]="!passwordVisible"
+								[class.fa-eye-slash]="passwordVisible" (click)="togglePasswordVisibility()"></i>
+						</div>
 						<div *ngIf="f.submitted && password.invalid">
 							<div style="color: red;" *ngIf="password.errors?.['required']">Password is required</div>
 							<div style="color: red;" *ngIf="password.errors?.['minlength']">Password must be at least 6
 								characters</div>
+							<div style="color: red;" *ngIf="password.errors?.['pattern']">Password must contain at least
+								one lowercase letter, one uppercase letter, one number, and one special character</div>
+
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="matchingPassword">Confirm Password</label> <input type="password"
-							name="matchingPassword" [(ngModel)]="form.matchingPassword" required minlength="6"
-							#matchingPassword="ngModel" />
+						<label for="matchingPassword">Confirm Password</label>
+						<div class="password-input">
+							<input [type]="passwordVisible ? 'text' : 'password'" type="password" name="matchingPassword" [(ngModel)]="form.matchingPassword" required
+								minlength="6" #matchingPassword="ngModel" />
+								<i class="toggle-password fas" [class.fa-eye]="!passwordVisible"
+								[class.fa-eye-slash]="passwordVisible" (click)="togglePasswordVisibility()"></i>
+						</div>
+
 						<div *ngIf="f.submitted && matchingPassword.invalid">
 							<div style="color: red;" *ngIf="matchingPassword.errors?.['required']">Confirm Password is
 								required</div>
@@ -76,9 +99,7 @@
 
 					<button type="submit">Envoyer</button>
 
-					<!-- <div class="form-group d-grid mt-2">
-				      <button class="btn btn-primary btn-block">Sign Up</button>
-			       </div> -->
+
 					<div style="color: red;" *ngIf="f.submitted && isSignUpFailed">
 						Signup failed!<br />{{ errorMessage }}
 					</div>
@@ -95,4 +116,3 @@
 	</div>
 
 </section>
-

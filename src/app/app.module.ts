@@ -11,7 +11,7 @@ import { TokenComponent } from './register/token.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule , HttpClient, provideHttpClient, withFetch} from '@angular/common/http';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
@@ -70,13 +70,14 @@ import { ListeProduitsComponent } from './liste-produits/liste-produits.componen
     BranchesComponent,
     AddBrancheComponent,
     AddProduitComponent,
-    ListeProduitsComponent
+    ListeProduitsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),

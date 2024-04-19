@@ -16,10 +16,7 @@ export class LoginComponent {
   isLoginFailed = false;
   errorMessage = '';
   currentUser: any;
-  googleURL = AppConstants.GOOGLE_AUTH_URL;
-  facebookURL = AppConstants.FACEBOOK_AUTH_URL;
-  githubURL = AppConstants.GITHUB_AUTH_URL;
-  linkedinURL = AppConstants.LINKEDIN_AUTH_URL;
+  
   // Ajoutez une variable pour suivre l'état de visibilité du mot de passe
   passwordVisible: boolean = false;
 

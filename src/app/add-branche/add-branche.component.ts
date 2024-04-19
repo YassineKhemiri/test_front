@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BrancheService } from '../_services/branche.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-add-branche',
@@ -33,23 +35,34 @@ export class AddBrancheComponent {
   
 }
 
-add(){
-
-  if (this.id){
-    //Edit branche
+add() {
+  if (this.id) {
+    // Edit branche
     this.brancheService.editBranche(this.branche).subscribe(
-      (response:any)=>{console.log("here response updated from BE",response); }
+      (response: any) => {
+        Swal.fire('Success', 'Branche updated successfully', 'success');
+        console.log('here response updated from BE', response);
+      },
+      (error) => {
+        Swal.fire('Error', 'Failed to update branche', 'error');
+        console.error('Error updating branche:', error);
+      }
     );
-  }else{
-    //Addbranche
-    //this.branche.DESTINATION_ID=this.idDestination;
+  } else {
+    // Add branche
     this.brancheService.addBranche(this.branche).subscribe(
-      (response:any)=>{console.log("here response from BE",response)}
+      (response: any) => {
+        Swal.fire('Success', 'Branche added successfully', 'success');
+        console.log('here response from BE', response);
+      },
+      (error) => {
+        Swal.fire('Error', 'Failed to add branche', 'error');
+        console.error('Error adding branche:', error);
+      }
     );
   }
   this.isSuccessful = true;
-  this.router.navigate(["/branches"])
-  
+  this.router.navigate(['/branches']);
 }
 
 
